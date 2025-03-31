@@ -6,26 +6,24 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AmadeusAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateCityTable : Migration
+    public partial class CrearTablaAdmin : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "City",
+                name: "Admin",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    nombreDestino = table.Column<string>(type: "text", nullable: false),
-                    img = table.Column<string>(type: "text", nullable: false),
-                    pais = table.Column<string>(type: "text", nullable: false),
-                    idioma = table.Column<string>(type: "text", nullable: false),
-                    lugarImperdible = table.Column<string>(type: "text", nullable: false)
+                    Full_name = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
+                    Password = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_City", x => x.Id);
+                    table.PrimaryKey("PK_Admin", x => x.Id);
                 });
         }
 
@@ -33,7 +31,7 @@ namespace AmadeusAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "City");
+                name: "Admin");
         }
     }
 }

@@ -2,17 +2,26 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AmadeusAPI.Models;
 
-    public class CityModel
+public class NewBaseType
+{
+    [Required]
+    public string? CityName { get; set; }
+}
+
+public class CityModel : NewBaseType
 {
     [Key]
     public int Id { get; set; }
     [Required]
-    public string nombreDestino { get; set; }
+    public string? Image { get; set; }
     [Required]
-    public string img { get; set; }
+    public string? Country { get; set; }
     [Required]
-    public string pais { get; set; }
-
-    public string idioma { get; set; }
-    public string lugarImperdible { get; set; }
+    public string? Language { get; set; }
+    [Required]
+    public string? UnmissablePlace { get; set; }
+    [Required]
+    public string? Continent { get; set; }
+    [Required]
+    public string? CityHash  { get; set; }
 }

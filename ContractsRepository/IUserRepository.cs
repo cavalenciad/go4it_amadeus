@@ -10,6 +10,7 @@ namespace AmadeusAPI.Interfaces
         Task<IEnumerable<User>> GetUsers();
         Task<User> AddUser(User user);
         Task<User> UpdateUser(User user);
-        Task<User> DeleteUser(int id);
+        Task<User?> DeleteUser(int id);
+        Task<User> GetUser(String email);
     }
 }
